@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Feline's Guardian | Error
+{% endblock %}
+
+{% block body %}
+  <section class="align-center status bottom-margin-50">
+    <img src="/static/media/apology.png">
+    <h2 class="Lexend">Sorry!</h2>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+  </section>
+{% endblock %}

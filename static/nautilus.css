@@ -1,0 +1,86 @@
+/* Reference: https://codepen.io/npayne/pen/LNNrOw */
+
+.nautilus{
+    position: relative;
+    min-width: 131.8034vh;
+    height: 90vh;
+    overflow: hidden;
+    top: 5vh
+}
+
+.nautilus > img{
+    position: absolute;
+    z-index: 10;
+    transition: all 400ms ease-out;
+    animation: genie 400ms forwards ease-out;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    width: 9.016986vh;
+    height: 5.57280vh;
+    left: 114.59055442vh;
+    top: 70.820377901vh;
+    opacity: 0;
+
+    &:nth-child(1){
+        opacity: 1;
+        width: 70vh;
+        height: 70vh;
+        top: 0;
+        left: 0;
+        margin-top: 5vh;
+    }
+    &:nth-child(2){
+        opacity: 1;
+        width: 41.8034vh;
+        height: 41.8034vh;
+        top: 0vh;
+        left: 70vh;
+    }
+    &:nth-child(3){
+        opacity: 1;
+        width: 38.19783669vh;
+        height: 38.19783669vh;
+        top: 41.8034vh;
+        left: 93.60615331vh;
+        
+    }
+    &:nth-child(4){
+        opacity: 1;
+        width: 23.60778717vh;
+        height: 23.60778717vh;
+        top: 56.39221283vh;
+        left: 70vh;
+        
+    }
+    &:nth-child(5){
+        opacity: 1;
+        height: 14.59055442vh;
+        width: 14.59055442vh;
+        top: 41.8034vh;
+        left: 70vh;
+        
+    }
+    &:nth-child(6){
+        opacity: 1;
+        height: 9.016986vh;
+        width:  9.016986vh;
+        top: 41.8034vh;
+        left: 84.59055442vh;
+        z-index: 994;
+    }
+    &:nth-child(7){
+        opacity: 1;
+        width: 9.016986vh;
+        height: 5.57280vh;
+        left: 84.59055442vh;
+        top: 50.820377901vh;
+        
+    }
+}
+
+@keyframes genie {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

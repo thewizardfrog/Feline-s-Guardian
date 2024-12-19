@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Feline's Guardian | Merchandise
+{% endblock %}
+
+{% block body %}
+<section>
+    <div class="container top-margin-30">
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            {% for product in products %}
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="width-25" src="/static/media/{{ product.product_code }}.png" alt="">
+                        <h5 class="Lexend card-title">{{ product.product_name }}</h5>
+                        <p class="Urbanist card-text">{{ product.product_price }}฿</p>
+                        <a href="/add_to_cart?s-product={{ product.product_code }}" method="POST"><button class="atc-button">Add to Cart <i class="fa-solid fa-check"></i></button></a>
+                       
+                    </div>
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>   
+    {% if indicator %}
+    <div id="order-summary-border" class="bottom-margin-50">
+        <div id="order-summary">
+            <h2 class="Lexend align-center">Order Summary</h2>
+            {% for order in user_order_summary %}
+            <div class="grid-container-4Columns grid-order-summary Urbanist">
+                <p class="os_product_name">{{order.product_name}}</p>
+                <p class="os_product_quantity">{{order.product_quantity}}<span class="os_product_makeCenter os_product_rightAlign"><i class="fa-solid fa-xmark"></i></span></p>
+                <p class="os_product_price">
+                    {{order.product_price}} ฿
+                    <span class="os_product_makeCenter os_product_rightAlign"><i class="fa-solid fa-equals"></i></span>
+                </p>
+                <p class="os_product_summary">
+                    {{ order.product_quantity * order.product_price }} ฿
+                    <span class="os_product_rightAlign"><a href="/drop_from_cart?&s-product={{ order.product_name }}"><i class="fa-solid fa-square-minus"></i></a></span>
+                </p>
+            </div>
+            {% endfor %}
+            <a href="/check_out"><button class="Urbanist os_product_rightAlign">Check Out!</button></a>
+        </div>
+       
+    </div>
+    {% endif %}
+</section>
+
+    
+{% endblock %}

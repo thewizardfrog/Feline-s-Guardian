@@ -1,0 +1,73 @@
+{% extends "admin_layout.html" %}
+
+{% block title %}
+    Feline's Guardian | Admin Homepage
+{% endblock %}
+
+{% block body %}
+    {% if new_inquiry != 0 %}
+    <section class="top-margin-30">
+        <h2 class="header Lexend headerPadding-left bottom-margin-30">New Assignment</h2>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-3 Urbanist headerPadding-left headerPadding-right">
+            {% for user in users %}
+            <div class="col">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h5 class="card-header">{{ user.id }}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ user.issue }}</h5>
+                            
+                            <p class="card-text">{{ user.information }}</p>
+            
+                            <p class="card-text">
+                                <i class="fa-solid fa-user"></i><span class="card-user"> {{ user.first_name }} {{ user.last_name }} <br></span>
+                                <i class="fa-solid fa-phone"></i><span class="card-phone"> {{ user.telephone }} <br></span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+    <section class="top-margin-30 bottom-margin-30">
+        <h2 class="header Lexend headerPadding-left">Personal Note</h2>
+        <form class="grid-container-6Columns grid-personalNote" action="/make_new_note" method="POST">
+            <div class="note-summary">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        {% for note in notes %}
+                            <a href="/new_assignment?s-id={{ note.id }}"><li class="list-group-item Urbanist">{{ note.header }}</li></a>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="note">
+                {% if the_chosen_note %}
+               
+                <div class="card">
+                    <div class="note-input Urbanist">
+                        <h5 class="card-title note-header">{{ the_chosen_note.header }}</h5>
+                        <p class="card-text note-description">{{ the_chosen_note.description }}</p>
+                        <h6 class="card-subtitle note-description text-end date"><i class="fa-solid fa-calendar"></i> {{ the_chosen_note.date }}</h6>
+                    </div>
+                </div>
+                {% else %}
+                <input class="note-input" type="text" name="header" placeholder="Header" required><br>
+                <input class="note-input description" type="text" name="description" placeholder="Description" required><br>
+                <input type="submit" name="myButton">
+                {% endif %}
+            </div>
+            
+            
+         
+            
+        </form>
+        
+        
+    </section>
+{% endblock %}

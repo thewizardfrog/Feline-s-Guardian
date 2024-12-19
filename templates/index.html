@@ -1,0 +1,199 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Feline's Guardian | Fostering a secure and safe environment for our Feline friends
+{% endblock %}
+
+{% block body %}
+    <section id="about-us" class="top-margin-30">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner Lexend smaller-header white-text">
+              <div class="carousel-item active">
+                <p class="d-block w-100">" There's so many cats in this neighborhood!<br> The whole street smells like cat's urine!!!<br> Can you come and neuter some of them? "</p>
+              </div>
+              <div class="carousel-item">
+                <p class="d-block w-100">" I saw this one cat that has wound all over its body.<br> Some are already inflected. Can you take it to the Vet?<br> I currently do not have enough money to do that. "</p>
+              </div>
+              <div class="carousel-item">
+                <p class="d-block w-100">" My family will be moving out soon.<br> However, we cannot bring our cats with us.<br> Can you help us find their new home? "</p>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <form action="/get_inquiry" method="POST">
+          <input class="input" type="text" name="inquiry" placeholder="Your Inquiry" required minlength="10"> 
+          <input class="input" type="text" name="telephone" placeholder="Your Telephone Number" required minlength="10"> 
+          <input type="submit">
+        </form>
+        
+    </section>
+
+    <section class="grid-container-4Columns grid-cause top-margin-50"> 
+        <section class="cause-1">
+          <img src="/static/media/causes-1.jpg" alt="">
+          <span class="cause-layout">
+              <h3 class="cause-header Lexend">Support SomSom's Wound Recovery</h3>
+              <article>
+                  <p class="Urbanist white-text">
+                      SomSom had a severe case of cat fungal disease which causing him to had a fever, 
+                      difficulty breathing, and a cough. To guarantee a complete 
+                      recovery, his injuries necessitate immediate medical attention, 
+                      including surgery, medicine, and continuing care.<br>
+                  </p>
+              </article>
+              <section class="progress-bar">
+                  <div id="first-donation" class="progress-value"></div>
+              </section>
+              <button id="donation-button-somsom" class="cta-button">Donate</button>
+              
+          </span>
+      </section>
+      <section class="cause-2">
+          <img src="/static/media/causes-2.jpg" alt="A banner for food-section">
+          <span class="cause-layout">
+              <h3 class="cause-header Lexend">Support the Funding of Noina's Medical Care</h3>
+              <article>
+                  <p class="white-text Urbanist">
+                      Noina was found in a distressed situation, with both physical 
+                      and psychological wounds from the abuse she had endured.
+                      To address her physical injuries and emotional pain, she will 
+                      need specialized care, medical treatment, and ongoing support during her long and difficult healing journey.
+                  </p>
+              </article>
+              <section class="progress-bar">
+                  <div id="second-donation" class="progress-value"></div>
+              </section>
+              <button class="cta-button">Donate</button>
+          </span>
+      </section>
+            
+    </section>   
+
+    <section id="our-achievement" class="achievements top-margin-50">
+        <div class="flex-container">
+            <section class="nautilus">
+                <img src="/static/media/our-achievements-sugar.jpg">
+                <img src="/static/media/our-achievements-brownie.jpg">
+                <img src="/static/media/our-achievements-dummiam.jpg">
+                <img src="/static/media/our-achievements-dummy.jpg">
+                <img src="/static/media/our-achievements-somjude.jpg">
+                <img src="/static/media/our-achievements-somwhan.jpg">
+                <img src="/static/media/our-achievements-yumyum-1.jpg">
+            </section>
+            <section class="achievements-heading">
+                <h2 class="achievements-header Lexend">Our Achievements</h2>
+                <div class="back-img">   
+                    <i class="fa-solid fa-circle-play play-button"></i> 
+                </div>
+            </section>
+        </div>  
+    </section>
+
+    <section>
+        <h2 class="header headerPadding-left Lexend top-margin-30">Track Your Donation</h2>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col">
+                  <div class="card">
+                    <div id="carouselExampleIndicators-1" class="carousel slide">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators-1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item">
+                            <img src="/static/media/slip-1.JPG" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item active">
+                            <img src="/static/media/donation-1.jpg" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators-1" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators-1" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    
+                    <div class="card-body">
+                      <h5 class="card-title Lexend">Bi-Monthly Health Check-in</h5>
+                      <p class="card-text Urbanist">Our bi-monthly health check-ins are designed to ensure that each cat remains happy, healthy, and well-cared for. These regular check-ups help us monitor the health and well-being of our rescued cats and identify any potential issues early on.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <div id="carouselExampleIndicators-2" class="carousel slide">
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators-2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators-2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      </div>
+                      <div class="carousel-inner">
+                        <div class="carousel-item">
+                          <img src="/static/media/slip-2.JPG" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item active">
+                          <img src="/static/media/donation-2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators-2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators-2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                  </div>
+                    <div class="card-body">
+                      <h5 class="card-title Lexend">Nutritious Food for Rescued Cats</h5>
+                      <p class="card-text Urbanist">Many of the cats we rescue have endured long periods of malnutrition, exposure, or illness. A healthy, balanced diet can make a world of difference in their recovery and well-being.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <div id="carouselExampleIndicators-3" class="carousel slide">
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators-3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators-3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      </div>
+                      <div class="carousel-inner">
+                        <div class="carousel-item">
+                          <img src="/static/media/slip-3.JPG" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item active">
+                          <img src="/static/media/donation-3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators-3" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators-3" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                  </div>
+                    <div class="card-body">
+                      <h5 class="card-title Lexend">Building a Safe Space for Newborn Kittens</h5>
+                      <p class="card-text Urbanist">Newborn kittens require special care and attention during their first few weeks of life. Without a safe and comfortable space, their chances of survival can be greatly reduced.</p>
+                    </div>
+                  </div>
+                </div>
+                
+            </div>
+        </div>   
+    </section>
+{% endblock %}

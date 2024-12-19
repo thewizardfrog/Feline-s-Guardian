@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Feline's Guardian | Check Out!
+{% endblock %}
+
+{% block body %}
+<h2 class="header Lexend align-center">Check Out!</h2>
+<section class="grid-container-2Columns bottom-margin-70">
+    
+    <div class="align-left">
+        {% for order in orders %}
+            <div class="grid-container-5Columns grid-order-summary-checkout Urbanist middle">
+                <img class="os_product_img" src="/static/media/{{order.product_code}}.png" alt="">
+                <p class="os_product_name">{{order.product_name}}</p>
+                <p class="os_product_quantity">
+                    {{order.product_quantity}}
+                    <span class="os_product_makeCenter os_product_rightAlign"><i class="fa-solid fa-xmark"></i></span>
+                </p>
+
+                <p class="os_product_price">
+                    {{order.product_price}} ฿
+                    <span class="os_product_makeCenter os_product_rightAlign"><i class="fa-solid fa-equals"></i></span>
+                </p>
+                <p class="os_product_summary">
+                    {{ order.product_quantity * order.product_price }} ฿
+                    
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="align-right left-border">
+        <div class="grid-container-3Columns grid-checkout">
+            <img class="checkout_img" src="/static/media/checkout.png" alt="">
+        </div>
+        <form class="checkout_form form" action="/make_the_order" method="POST">
+            <input class="input" type="text" name="first_name" placeholder="First Name" required>
+            <input class="input" type="text" name="last_name" placeholder="Last Name" required><br>
+            <input class="long-input" type="text" name="address" placeholder="Address" required><br>
+            <input class="submit-button" type="submit" name="myButton">
+        </form>
+    </div>
+</section>
+  
+{% endblock %}
